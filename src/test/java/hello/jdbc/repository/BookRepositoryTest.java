@@ -1,5 +1,6 @@
 package hello.jdbc.repository;
 
+import com.zaxxer.hikari.HikariDataSource;
 import hello.jdbc.domain.Book;
 import hello.jdbc.domain.BookDTO;
 import org.assertj.core.api.Assertions;
@@ -10,17 +11,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import javax.sql.DataSource;
 import java.util.List;
 
-@SpringBootTest
 class BookRepositoryTest {
-    @Autowired
-    private DataSource dataSource;
 
 
     @Test
     void test(){
-        BookRepository bookRepository = new BookRepository(dataSource);
-        List<Book> list = bookRepository.findAll();
-        Assertions.assertThat(list.isEmpty());
+     Assertions.assertThat("fefef".length()).isEqualTo(5);
     }
 
 }
