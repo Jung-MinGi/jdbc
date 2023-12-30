@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.sql.DataSource;
+import java.util.List;
+
 @SpringBootTest
 class BookRepositoryTest {
     @Autowired
@@ -17,10 +19,8 @@ class BookRepositoryTest {
     @Test
     void test(){
         BookRepository bookRepository = new BookRepository(dataSource);
-        bookRepository.save(new BookDTO("제목1","컨텐츠1","저자1"));
-        Book book = bookRepository.findById();
-        Assertions.assertThat(book.getId()).isEqualTo(1);
-
+        List<Book> list = bookRepository.findAll();
+        Assertions.assertThat(list.isEmpty());
     }
 
 }

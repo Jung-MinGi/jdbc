@@ -25,11 +25,9 @@ public class BookController {
         Book book = service.bookSave(bookDTO);
         return new ResponseEntity<>(book, HttpStatus.OK);
     }
-
     @GetMapping("/api/book")
     public ResponseEntity<List<Book>> save() {
         List<Book> list = service.findAll();
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
-
 }
